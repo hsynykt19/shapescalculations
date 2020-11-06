@@ -35,6 +35,10 @@ public class MyUtils {
         alanYazdir(ucgenAlani);
         cokgenAlanYazdir(cokgenAlani);
         cokgenCevreYazdir(cokgenCevresi);
+
+        int[] sayilar = {-60,-42,-35,-10,-6,-3,-1,1,2,3,4,8,12,30,50};
+        double[] doubles = fonksiyonHesapla(sayilar);
+        fonksYazdir(doubles);
     }
 
 
@@ -67,6 +71,21 @@ public class MyUtils {
     }
     public static void cokgenCevreYazdir(float t) {
         System.out.println("Çokgen Çevre:"+t);
+    }
+    public static void fonksYazdir(double[] c) {
+        System.out.println("fonksiyon:"+c);
+    }
+
+
+    public static double[] fonksiyonHesapla(int[] sayilar) {
+        double[] sonuc = new double[sayilar.length];
+        int sayac = 0;
+        for (double x: sayilar) {
+            x = 3 * Math.pow(x, 2) - 2*Math.pow(Math.E, x) + Math.sqrt(x);
+            sonuc[sayac] = 1 / (1 + Math.pow(Math.E, x));
+            sayac++;
+        }
+        return sonuc;
     }
 }
 
